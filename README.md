@@ -5,6 +5,12 @@
     curl -s http://getcomposer.org/installer | php
     php composer.phar create-project -s dev zendframework/skeleton-application zf3
 
+## Links úteis
+
+    https://joind.in/event/zendcon-2015/schedule/list
+    https://mwop.net
+    http://ocramius.github.io
+
 ## Introduction
 
 This is a skeleton application using the Zend Framework MVC layer and module
