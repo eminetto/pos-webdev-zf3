@@ -25,7 +25,6 @@ class Module
             [$this, 'mvcPreDispatch'], 
             100
         );
-
     }
 
     public function mvcPreDispatch($event)

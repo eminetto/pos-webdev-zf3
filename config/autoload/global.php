@@ -17,10 +17,21 @@ return [
             Application\Factory\Db\Adapter\Adapter::class => Application\Factory\Db\Adapter\Adapter::class,
             Application\Model\Beer\TableGateway::class =>  Application\Factory\Model\Beer\TableGateway::class,
              Application\Service\Auth::class => Application\Factory\Service\Auth::class,
+             'Application\Service\Cache' => Application\Factory\Service\Cache::class,
         ],
     ],
     'db' => [
         'driver' => 'Pdo_Sqlite',
         'database' => 'beers.db',
+    ],
+    'cache' => [
+        'adapter' => [
+            'name'    => 'apc',
+            'options' => ['ttl' => 3600],
+        ],
+        'plugins' => [
+            'exception_handler' => ['throw_exceptions' => false],
+            'serializer',
+        ],
     ],
 ];
