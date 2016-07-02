@@ -19,4 +19,22 @@ class BeerController extends AbstractActionController
 
         return new ViewModel(['beers' => $beers]);
     }
+
+    public function deleteAction()
+    {
+        $id = $this->params()->fromRoute('id');
+
+        $beer = $this->tableGateway->select(['id' => $id]);
+        if (count($beer) == 0) {
+            throw new \Exception("Beer not found", 404);
+
+        }
+
+        $this->tableGateway->delete(['id' => $id]);
+
+        // return $this->redirect()->toUrl('/beer');
+        return $this->redirect()->toRoute('beer',['action' => 'index']);
+
+    }
+
 }
