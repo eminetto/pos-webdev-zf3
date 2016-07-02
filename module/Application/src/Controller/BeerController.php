@@ -31,7 +31,7 @@ class BeerController extends AbstractActionController
         }
 
         $this->tableGateway->delete(['id' => $id]);
-
+        
         // return $this->redirect()->toUrl('/beer');
         return $this->redirect()->toRoute('beer',['action' => 'index']);
 
